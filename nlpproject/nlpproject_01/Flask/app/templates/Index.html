@@ -1,0 +1,61 @@
+{% extends "Base.html" %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static',filename='message.js') }}"></script>
+<script src="{{ url_for('static',filename='Index.js') }}"></script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link href="{{ url_for("static",filename="Index.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block my_content %}
+
+<div class="container">
+
+  {# 注释
+  {% import "bootstrap/wtf.html" as wtf %}
+  {{ wtf.quick_form(form) }}
+  #}
+  <div class="form-group col-md-12">
+    <div class="form-group col-md-6" style="padding:0">
+      <label class="control-label" for="News">新闻标题</label>
+      <div class='input-group col-md-12  ant-title'>
+        <input name="NewsTitle" id="NewsTitle" class="myinput" value="{{ form.NewsTitle }}"></input>
+      </div>
+    </div>
+    <div class="form-group col-md-2 ant-des">
+      <label class="control-label" for="News">摘要长度</label>
+      <div class='input-group col-md-12'>
+        <input name="NewSummaryLength" id="NewSummaryLength" class="myinput"
+          value="{{ form.NewSummaryLength }}"></input>
+      </div>
+    </div>
+    <div  class="ant-button">
+      <button type="button" class="btn btn-info btn-default" onclick="LoadData()">随机数据</button>
+      <button type="button" class="btn btn-danger btn-default" onclick="Clear()">清空</button>
+      <button type="button" class="btn btn-success btn-default" onclick="ProcessNews()">生成摘要</button>
+    </div>
+  </div>
+
+
+  <div class=" form-group col-md-12">
+    <label class="control-label" for="News">新闻内容</label>
+    <div class='input-group col-md-12'>
+      <textarea name="NewsContent" id="NewsContent" class="mytextarea" cols="100%" rows="10"
+        onchange="textchanged()">{{ form.NewsContent }}</textarea>
+    </div>
+  </div>
+
+  <div class="form-group col-md-12">
+    <label class="control-label" for="NewSummary">新闻摘要</label>
+    <div class='input-group col-md-12'>
+      <textarea name="NewSummary" id="NewSummary" class="mytextarea" cols="100%" rows="6">
+          </textarea>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
