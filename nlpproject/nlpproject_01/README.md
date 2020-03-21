@@ -41,7 +41,11 @@
     	|-- 09_sentence2vec.py
     	|-- 10_get_keywords.py
     	|-- NLP_Project_01 非监督文本自动摘要模型的构建.ipynb
-    |-- README.md  	
+    |-- 02-非监督文本自动摘要模型效果展示.pptx
+    |-- 03-参数调整表.pptx
+    |-- 04.网站IP链接.txt
+    |-- 05-项目优缺点模型分析报告.pptx
+    |-- README.md 
 ```
 
 ## 2. Flask文件夹为部署项目的主要web文件，终端打开Flask文件夹，执行python -m flask run
